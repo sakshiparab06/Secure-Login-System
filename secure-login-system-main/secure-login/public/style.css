@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    background: #0b0b1a;
+    position: relative;
+}
+
+/* 🌈 Animated colorful background */
+body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        -45deg,
+        #ff006e,
+        #8338ec,
+        #3a86ff,
+        #06d6a0,
+        #ffbe0b
+    );
+
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+
+    filter: blur(70px);
+    opacity: 0.65;
+}
+
+@keyframes gradientMove {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(-10%, -10%); }
+    100% { transform: translate(0,0); }
+}
+
+/* 💎 Glass card */
+.container {
+    position: relative;
+    width: 380px;
+    padding: 35px;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(25px);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.6),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+
+    animation: float 4s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* title */
+h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+/* ✅ FIXED LABELS */
+label {
+    color: #ffffff !important;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* inputs */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.05);
+    color: white;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+/* placeholder */
+input::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+/* glow */
+input:focus {
+    border-color: #3a86ff;
+    box-shadow: 0 0 12px #3a86ff;
+    transform: scale(1.03);
+}
+
+/* button */
+button {
+    width: 100%;
+    padding: 12px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, #ff006e, #8338ec, #3a86ff);
+
+    color: white;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(131,56,236,0.4);
+}
+
+/* link */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+
+    color: #ddd;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3a86ff;
+}
